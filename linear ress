@@ -1,0 +1,117 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyN8iqBMQ5CAy/OgpZnOo6Do",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/kambleutkarsha603-rgb/ML124/blob/main/linear%20ress\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 106
+        },
+        "id": "rL6S7nn1E_21",
+        "outputId": "7bf36c61-a1b7-444b-80e9-90396b10f61c"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "SyntaxError",
+          "evalue": "invalid syntax (3180777346.py, line 1)",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"/tmp/ipykernel_461/3180777346.py\"\u001b[0;36m, line \u001b[0;32m1\u001b[0m\n\u001b[0;31m    Linear Regression with the scikit-learn :                                                                                import pandas as pd\u001b[0m\n\u001b[0m           ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid syntax\n"
+          ]
+        }
+      ],
+      "source": [
+        "Linear Regression with the scikit-learn :                                                                                import pandas as pd\n",
+        "import matplotlib.pyplot as plt\n",
+        "from sklearn.linear_model import LinearRegression\n",
+        "\n",
+        "# Load dataset\n",
+        "data = pd.read_csv(\"data.csv\")\n",
+        "\n",
+        "# Input (X) and Output (Y)\n",
+        "X = data[[\"X\"]]\n",
+        "y = data[\"Y\"]"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Create Linear Regression model\n",
+        "model = LinearRegression()\n",
+        "\n",
+        "# Train the model\n",
+        "model.fit(X, y)\n",
+        "\n",
+        "# Predict values\n",
+        "y_pred = model.predict(X)"
+      ],
+      "metadata": {
+        "id": "22huy-0cFFdQ"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Print coefficients\n",
+        "print(\"Intercept (b0):\", model.intercept_)\n",
+        "print(\"Slope (b1):\", model.coef_[0])\n",
+        "\n",
+        "# Plot original data\n",
+        "plt.scatter(X, y, label=\"Actual Data\")\n"
+      ],
+      "metadata": {
+        "id": "gPTsiGXfFFkn"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Plot regression line\n",
+        "plt.plot(X, y_pred, label=\"Regression Line\")\n",
+        "\n",
+        "plt.xlabel(\"X\")\n",
+        "plt.ylabel(\"Y\")\n",
+        "plt.title(\"Linear Regression using Scikit-learn\")\n",
+        "plt.legend()\n",
+        "\n",
+        "plt.show()"
+      ],
+      "metadata": {
+        "id": "0VDy8KhoFPLX"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
